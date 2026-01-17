@@ -1,31 +1,38 @@
 <template>
   <div class="selection:bg-primary-200">
     <!-- Hero Section -->
-    <div class="relative overflow-hidden bg-neutral-50 pt-16 pb-32">
-      <UContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="max-w-2xl">
-            <span class="text-primary-600 font-serif italic text-lg mb-4 block">Welcome to Solace Mental Health</span>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold text-neutral-900 leading-tight mb-8">
-              Nurturing Your Mind in the Heart of Miami
-            </h1>
-            <p class="text-xl text-neutral-600 mb-10 leading-relaxed max-w-lg">
-              Experience psychiatric care that feels human. At Solace, we combine clinical excellence with a warm, organic approach to help your mental garden flourish.
-            </p>
-            <div class="flex flex-wrap gap-4">
-              <UButton label="Begin Your Journey" to="#contact" size="xl" color="primary" class="rounded-full px-8 font-bold" />
-              <UButton label="Explore Our Approach" to="#philosophy" size="xl" variant="link" color="neutral" class="font-medium" />
-            </div>
-          </div>
-          <div class="relative group">
-            <div class="absolute inset-0 bg-primary-200/30 rounded-full blur-3xl -z-10 group-hover:bg-primary-300/40 transition-colors duration-700"></div>
-            <div class="illustration-container card-organic shadow-2xl bg-white/50 backdrop-blur-sm p-4">
-              <img src="/wellness.png" alt="Mental Wellness Illustration"
-                class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000" />
-            </div>
+    <div class="relative min-h-[85vh] flex items-center overflow-hidden bg-neutral-50 pt-16 pb-20">
+      <!-- Background Illustration -->
+      <div class="absolute inset-0 z-0">
+        <img src="/hero-bg-new.png" alt="" class="w-full h-full object-cover opacity-30 mix-blend-multiply" />
+        <div class="absolute inset-0 bg-gradient-to-r from-neutral-50 via-neutral-50/80 to-transparent"></div>
+      </div>
+
+      <UContainer class="relative z-10">
+        <div class="max-w-3xl">
+          <span class="text-primary-700 font-serif italic text-xl mb-6 block lg:translate-y-2">Welcome to Solace Mental Health</span>
+          <h1 class="text-6xl md:text-8xl font-serif font-bold text-neutral-900 leading-[1.1] mb-8">
+            Nurturing Your Mind in the <span class="text-primary-600 italic">Heart</span> of Miami
+          </h1>
+          <p class="text-2xl text-neutral-700 mb-12 leading-relaxed max-w-xl font-light">
+            Experience psychiatric care that feels human. At Solace, we combine clinical excellence with a warm, organic approach to help your mental garden flourish.
+          </p>
+          <div class="flex flex-wrap gap-6">
+            <UButton label="Begin Your Journey" to="#contact" size="xl" color="primary" class="rounded-full px-10 py-4 text-lg font-bold shadow-lg hover:shadow-primary-200/50 transition-all" />
+            <UButton label="Explore Our Approach" to="#philosophy" size="xl" variant="link" color="neutral" class="text-lg font-semibold group">
+              Explore Our Approach
+              <template #trailing>
+                <UIcon name="i-lucide-arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </template>
+            </UButton>
           </div>
         </div>
       </UContainer>
+
+      <!-- Decorative floating elements (optional but premium) -->
+      <div class="absolute bottom-0 right-0 w-1/3 h-1/2 hidden lg:block opacity-20 pointer-events-none">
+        <img src="/wellness.png" alt="" class="w-full h-auto transform rotate-12 translate-y-20 translate-x-20" />
+      </div>
     </div>
 
     <!-- Philosophy Section -->
