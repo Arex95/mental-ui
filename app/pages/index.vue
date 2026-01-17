@@ -1,194 +1,259 @@
 <template>
   <div class="selection:bg-primary-200">
     <!-- Hero Section -->
-    <div class="relative min-h-[85vh] flex items-center overflow-hidden bg-neutral-50 pt-16 pb-20">
-      <!-- Background Illustration -->
+    <div class="relative min-h-[90vh] flex items-center overflow-hidden bg-neutral-50 pt-20 pb-16 sm:pt-32 sm:pb-32">
+      <!-- Custom Organic Background (No sunflowers - Palm/Wave focus) -->
       <div class="absolute inset-0 z-0">
-        <img src="/hero-bg-new.png" alt="" class="w-full h-full object-cover opacity-30 mix-blend-multiply" />
-        <div class="absolute inset-0 bg-gradient-to-r from-neutral-50 via-neutral-50/80 to-transparent"></div>
+        <!-- Soft Organic Blobs -->
+        <div
+          class="absolute -top-[10%] -right-[5%] w-[80%] h-[80%] bg-secondary-100/40 rounded-full blur-[120px] animate-pulse opacity-70">
+        </div>
+        <div
+          class="absolute -bottom-[10%] -left-[10%] w-[60%] h-[70%] bg-primary-100/50 rounded-full blur-[100px] opacity-60">
+        </div>
+
+        <!-- Miami Palm Pattern (SVG) - Enhanced for better presence -->
+        <svg class="absolute inset-0 w-full h-full opacity-[0.12] pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="palm-pattern" x="0" y="0" width="500" height="500" patternUnits="userSpaceOnUse">
+              <!-- Stylized abstract leaves/waves -->
+              <path d="M250 500C250 350 180 250 0 250" stroke="currentColor" fill="none" stroke-width="3"
+                class="text-secondary-600" />
+              <path d="M250 500C250 350 320 250 500 250" stroke="currentColor" fill="none" stroke-width="3"
+                class="text-secondary-600" />
+              <path d="M250 500C220 400 120 350 25 310" stroke="currentColor" fill="none" stroke-width="2"
+                class="text-secondary-500 opacity-60" />
+              <path d="M250 500C280 400 380 350 475 310" stroke="currentColor" fill="none" stroke-width="2"
+                class="text-secondary-500 opacity-60" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#palm-pattern)" />
+        </svg>
+
+        <!-- Subtle Grain Overlay -->
+        <div
+          class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.15] contrast-150 brightness-100">
+        </div>
+
+        <!-- Gradient overlay to ensure text contrast -->
+        <div class="absolute inset-0 bg-gradient-to-b from-neutral-50/20 via-neutral-50/60 to-neutral-50"></div>
       </div>
 
       <UContainer class="relative z-10">
-        <div class="max-w-3xl">
-          <span class="text-primary-700 font-serif italic text-xl mb-6 block lg:translate-y-2">Welcome to Solace Mental Health</span>
-          <h1 class="text-6xl md:text-8xl font-serif font-bold text-neutral-900 leading-[1.1] mb-8">
-            Nurturing Your Mind in the <span class="text-primary-600 italic">Heart</span> of Miami
+        <div class="max-w-4xl mx-auto text-center lg:text-left pt-8">
+          <span
+            class="text-primary-700 font-serif italic text-lg sm:text-2xl mb-6 block animate-fade-in-up [animation-delay:200ms]">
+            Welcome to Solace Mental Health
+          </span>
+          <h1
+            class="text-5xl sm:text-7xl lg:text-9xl font-serif font-bold text-neutral-900 leading-[1.05] mb-8 animate-fade-in-up [animation-delay:400ms]">
+            Nurturing Your Mind in the <span
+              class="text-primary-600 italic underline decoration-secondary-300 underline-offset-8">Heart</span> of
+            Miami
           </h1>
-          <p class="text-2xl text-neutral-700 mb-12 leading-relaxed max-w-xl font-light">
-            Experience psychiatric care that feels human. At Solace, we combine clinical excellence with a warm, organic approach to help your mental garden flourish.
+          <p
+            class="text-lg sm:text-2xl text-neutral-700 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light animate-fade-in-up [animation-delay:600ms]">
+            Experience psychiatric care that feels human. At Solace, we combine clinical excellence with a warm, organic
+            approach to help your mental garden flourish.
           </p>
-          <div class="flex flex-wrap gap-6">
-            <UButton label="Begin Your Journey" to="#contact" size="xl" color="primary" class="rounded-full px-10 py-4 text-lg font-bold shadow-lg hover:shadow-primary-200/50 transition-all" />
-            <UButton label="Explore Our Approach" to="#philosophy" size="xl" variant="link" color="neutral" class="text-lg font-semibold group">
-              Explore Our Approach
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 animate-fade-in-up [animation-delay:800ms]">
+            <UButton label="Begin Your Journey" to="#contact" size="xl" color="primary"
+              class="rounded-full px-10 py-5 text-lg sm:text-xl font-bold shadow-xl hover:shadow-primary-300/40 transition-all hover:scale-105 w-full sm:w-auto" />
+            <UButton label="Our Philosophy" to="#philosophy" size="xl" variant="link" color="neutral"
+              class="text-lg sm:text-xl font-semibold group">
+              Our Philosophy
               <template #trailing>
-                <UIcon name="i-lucide-arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <UIcon name="i-lucide-arrow-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </template>
             </UButton>
           </div>
         </div>
       </UContainer>
-
-      <!-- Decorative floating elements (optional but premium) -->
-      <div class="absolute bottom-0 right-0 w-1/3 h-1/2 hidden lg:block opacity-20 pointer-events-none">
-        <img src="/wellness.png" alt="" class="w-full h-auto transform rotate-12 translate-y-20 translate-x-20" />
-      </div>
     </div>
 
     <!-- Philosophy Section -->
-    <div id="philosophy" class="bg-neutral-100 py-32 overflow-hidden relative">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-100/50 rounded-full -ml-48 -mb-48 blur-3xl opacity-50"></div>
-      
-      <UContainer class="relative z-10">
-        <div class="text-center mb-20">
-          <h2 class="text-primary-600 font-serif italic text-2xl mb-6">Our Philosophy</h2>
-          <blockquote class="text-4xl md:text-6xl font-serif font-bold text-neutral-900 leading-tight max-w-5xl mx-auto">
+    <div id="philosophy" class="bg-neutral-100 py-20 sm:py-32 overflow-hidden relative">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50">
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-100/50 rounded-full -ml-48 -mb-48 blur-3xl opacity-50">
+      </div>
+
+      <UContainer class="relative z-10 px-4 sm:px-6">
+        <div class="text-center mb-16 sm:mb-24">
+          <h2 class="text-primary-600 font-serif italic text-xl sm:text-2xl mb-6">Our Philosophy</h2>
+          <blockquote
+            class="text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-neutral-900 leading-tight max-w-5xl mx-auto">
             "Your mind is not a problem to be solved, but a garden to be nurtured."
           </blockquote>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-          <p class="text-2xl text-neutral-700 leading-relaxed font-light">
-            We believe that mental health is a natural process of growth and balance. Located in the heart of Miami, we bring a warm, professional, and deeply human perspective to psychiatric care.
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-20">
+          <p class="text-xl sm:text-2xl text-neutral-700 leading-relaxed font-light">
+            We believe that mental health is a natural process of growth and balance. Located in the heart of Miami, we
+            bring a warm, professional, and deeply human perspective to psychiatric care.
           </p>
-          <p class="text-2xl text-neutral-700 leading-relaxed font-light md:border-l md:border-neutral-300 md:pl-12">
-            Just as a garden needs the right environment to bloom, we provide the tools and support you need to find your inner calm amidst life's vibrant energy.
+          <p
+            class="text-xl sm:text-2xl text-neutral-700 leading-relaxed font-light md:border-l md:border-neutral-300 md:pl-12">
+            Just as a garden needs the right environment to bloom, we provide the tools and support you need to find
+            your
+            inner calm amidst life's vibrant energy.
           </p>
         </div>
       </UContainer>
     </div>
 
     <!-- Services Section -->
-    <div id="services" class="py-32 bg-white">
+    <div id="services" class="py-20 sm:py-32 bg-white">
       <UContainer>
-        <div class="max-w-3xl mb-16">
-          <h2 class="text-4xl font-serif font-bold text-neutral-900 mb-6 font-serif italic">Cultivating Well-being</h2>
-          <p class="text-xl text-neutral-600 leading-relaxed">
-            Explore our range of personalized services designed to support your unique journey with compassion and expertise.
+        <div class="max-w-3xl mb-12 sm:mb-20 px-4 sm:px-0">
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-neutral-900 mb-6 italic">Cultivating Well-being</h2>
+          <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed">
+            Explore our range of personalized services designed to support your unique journey with compassion and
+            expertise.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 px-4 sm:px-0">
           <!-- Therapy Card -->
           <div class="flex flex-col group py-4">
-            <div class="illustration-container card-organic mb-8 bg-primary-50 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8">
-              <img src="/therapy.png" alt="Psychotherapy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+            <div
+              class="illustration-container card-organic mb-8 bg-primary-50 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8 sm:p-12">
+              <img src="/therapy.png" alt="Psychotherapy"
+                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-4">Individual Therapy</h3>
-            <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-4">Individual Therapy</h3>
+            <p class="text-neutral-600 text-lg sm:text-xl leading-relaxed mb-6">
               Meaningful, evidence-based conversations focused on connection, understanding, and sustainable growth.
             </p>
-            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-lg w-fit font-bold" />
+            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-xl font-bold w-fit" />
           </div>
 
           <!-- Evaluation Card -->
           <div class="flex flex-col group py-4">
-            <div class="illustration-container card-organic mb-8 bg-secondary-50 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8">
-              <img src="/evaluation.png" alt="Evaluation" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+            <div
+              class="illustration-container card-organic mb-8 bg-secondary-50 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8 sm:p-12">
+              <img src="/evaluation.png" alt="Evaluation"
+                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-4">Psychiatric Evaluation</h3>
-            <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-4">Psychiatric Evaluation</h3>
+            <p class="text-neutral-600 text-lg sm:text-xl leading-relaxed mb-6">
               Comprehensive assessments to understand your history and map out a personalized path to clarity.
             </p>
-            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-lg w-fit font-bold" />
+            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-xl font-bold w-fit" />
           </div>
 
           <!-- Wellness Card -->
           <div class="flex flex-col group py-4">
-            <div class="illustration-container card-organic mb-8 bg-neutral-100 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8">
-              <img src="/wellness.png" alt="Holistic Wellness" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+            <div
+              class="illustration-container card-organic mb-8 bg-neutral-100 rounded-[2rem] overflow-hidden aspect-square flex items-center justify-center p-8 sm:p-12">
+              <img src="/wellness.png" alt="Holistic Wellness"
+                class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
             </div>
-            <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-4">Holistic Wellness</h3>
-            <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-neutral-900 mb-4">Holistic Wellness</h3>
+            <p class="text-neutral-600 text-lg sm:text-xl leading-relaxed mb-6">
               Integrating lifestyle, nutrition, and mindfulness to create a foundation for long-term mental resilience.
             </p>
-            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-lg w-fit font-bold" />
+            <UButton label="Discover More" variant="link" color="primary" class="p-0 text-xl font-bold w-fit" />
           </div>
         </div>
       </UContainer>
     </div>
 
     <!-- Miami Location Section -->
-    <div id="about" class="bg-primary-50 py-32 overflow-hidden">
+    <div id="about" class="bg-primary-50 py-20 sm:py-32 overflow-hidden">
       <UContainer>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20 items-center px-4 sm:px-0">
           <div class="relative order-2 lg:order-1">
-            <div class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-[3rem] -z-10 transform -rotate-3 scale-105"></div>
+            <div
+              class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-[3rem] -z-10 transform -rotate-3 scale-105">
+            </div>
             <img src="/hero.png" alt="Miami Serenity"
               class="w-full h-auto rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" />
           </div>
           <div class="order-1 lg:order-2">
-            <h2 class="text-4xl md:text-6xl font-serif font-bold text-neutral-900 mb-8 leading-tight">Finding Your Calm in the Neon City</h2>
-            <p class="text-2xl text-neutral-700 mb-10 leading-relaxed font-light">
-              Based in the serene heart of Miami, FL, we provide a sanctuary from the urban rush. Whether in-person or via telehealth, our space is designed to be your grounding force.
+            <h2 class="text-3xl sm:text-5xl lg:text-7xl font-serif font-bold text-neutral-900 mb-8 leading-tight">
+              Finding
+              Your Calm in the Neon City</h2>
+            <p class="text-xl sm:text-2xl text-neutral-700 mb-10 leading-relaxed font-light">
+              Based in the serene heart of Miami, FL, we provide a sanctuary from the urban rush. Whether in-person or
+              via
+              telehealth, our space is designed to be your grounding force.
             </p>
-            <div class="space-y-8 mb-12">
+            <div class="space-y-6 sm:space-y-8 mb-10 sm:mb-12">
               <div class="flex items-center gap-6">
-                <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600">
-                  <UIcon name="i-lucide-map-pin" class="w-7 h-7" />
+                <div
+                  class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600">
+                  <UIcon name="i-lucide-map-pin" class="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
                 <div>
-                  <p class="text-xl font-bold text-neutral-900">Miami, Florida</p>
-                  <p class="text-lg text-neutral-600">Coral Gables & Virtual Visits</p>
+                  <p class="text-lg sm:text-xl font-bold text-neutral-900">Miami, Florida</p>
+                  <p class="text-base sm:text-lg text-neutral-600">Coral Gables & Virtual Visits</p>
                 </div>
               </div>
               <div class="flex items-center gap-6">
-                <div class="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600">
-                  <UIcon name="i-lucide-clock" class="w-7 h-7" />
+                <div
+                  class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-primary-600">
+                  <UIcon name="i-lucide-clock" class="w-6 h-6 sm:w-8 sm:h-8" />
                 </div>
                 <div>
-                  <p class="text-xl font-bold text-neutral-900">Flexible Scheduling</p>
-                  <p class="text-lg text-neutral-600">Morning & Evening Appointments</p>
+                  <p class="text-lg sm:text-xl font-bold text-neutral-900">Flexible Scheduling</p>
+                  <p class="text-base sm:text-lg text-neutral-600">Morning & Evening Appointments</p>
                 </div>
               </div>
             </div>
-            <UButton label="Get Directions" variant="solid" color="neutral" size="xl" class="rounded-full px-10 font-bold" />
+            <UButton label="Get Directions" variant="solid" color="neutral" size="xl"
+              class="rounded-full px-10 py-5 font-bold w-full sm:w-auto" />
           </div>
         </div>
       </UContainer>
     </div>
 
     <!-- CTA Section -->
-    <div id="contact" class="py-32">
+    <div id="contact" class="py-20 sm:py-32">
       <UContainer>
-        <UPageCTA 
-          title="Ready to Start Growing?"
+        <UPageCTA title="Ready to Start Growing?"
           description="Book your initial consultation today. We're here to listen, support, and help you find your way forward."
-          variant="solid" 
-          color="primary" 
-          class="rounded-[3rem] py-24 px-12 shadow-2xl relative overflow-hidden"
+          variant="solid" color="primary"
+          class="rounded-[2.5rem] sm:rounded-[3.5rem] py-16 sm:py-24 px-6 sm:px-12 shadow-2xl relative overflow-hidden"
           :links="[{
             label: 'Book Online',
             to: '#',
             icon: 'i-lucide-calendar',
             size: 'xl',
-            class: 'bg-neutral-950 text-white hover:bg-neutral-800 rounded-full px-8'
+            class: 'bg-neutral-950 text-white hover:bg-neutral-800 rounded-full px-10 py-5 w-full sm:w-auto text-xl'
           }, {
             label: 'Call Us: (305) 555-0123',
             to: 'tel:3055550123',
             variant: 'link',
             color: 'neutral',
             size: 'xl',
-            class: 'hover:text-neutral-900'
-          }]" 
-        >
+            class: 'hover:text-neutral-900 text-xl font-semibold'
+          }]">
           <template #top>
             <div class="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
           </template>
         </UPageCTA>
       </UContainer>
     </div>
-    
+
     <!-- Footer -->
-    <footer class="py-16 border-t border-neutral-200 text-center bg-neutral-100">
+    <footer class="py-12 sm:py-20 border-t border-neutral-200 text-center bg-neutral-100 px-4 sm:px-0">
       <UContainer>
         <div class="mb-8">
-          <span class="text-3xl font-serif font-bold text-neutral-900">Solace</span>
+          <span class="text-2xl sm:text-4xl font-serif font-bold text-neutral-900">Solace</span>
         </div>
-        <p class="text-neutral-500 font-serif italic text-lg mb-4">Helping Miami Bloom.</p>
-        <p class="text-neutral-400 text-sm">© {{ new Date().getFullYear() }} Solace Mental Health. All rights reserved.</p>
+        <p class="text-neutral-500 font-serif italic text-lg sm:text-xl mb-4">Helping Miami Bloom.</p>
+        <p class="text-neutral-400 text-sm sm:text-base">© {{ new Date().getFullYear() }} Solace Mental Health. All
+          rights
+          reserved.</p>
       </UContainer>
     </footer>
   </div>
 </template>
+
+<style scoped>
+/* Scoped styles removed - animations and effects are now handled globally in main.css theme */
+</style>

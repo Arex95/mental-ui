@@ -4,14 +4,15 @@
 @theme static {
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Lora', serif;
-  
+
   /* Sunflower-inspired Palette */
   --color-primary-50: #fffbeb;
   --color-primary-100: #fef3c7;
   --color-primary-200: #fde68a;
   --color-primary-300: #fcd34d;
   --color-primary-400: #fbbf24;
-  --color-primary-500: #f59e0b; /* Warmer yellow */
+  --color-primary-500: #f59e0b;
+  /* Warmer yellow */
   --color-primary-600: #d97706;
   --color-primary-700: #b45309;
   --color-primary-800: #92400e;
@@ -30,8 +31,10 @@
   --color-secondary-900: #14532d;
   --color-secondary-950: #052e16;
 
-  --color-neutral-50: #fdfaf3; /* Cream background */
-  --color-neutral-100: #f9f1e1; /* Slightly darker cream */
+  --color-neutral-50: #fdfaf3;
+  /* Cream background */
+  --color-neutral-100: #f9f1e1;
+  /* Slightly darker cream */
   --color-neutral-200: #f1e4cc;
   --color-neutral-300: #e5d1ae;
   --color-neutral-400: #c9a77c;
@@ -41,6 +44,34 @@
   --color-neutral-800: #574133;
   --color-neutral-900: #48362d;
   --color-neutral-950: #261b17;
+
+  /* Custom Animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-15px) rotate(1deg);
+    }
+  }
+
+  --animation-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animation-float: float 6s ease-in-out infinite;
 }
 
 :root {
