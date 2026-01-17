@@ -1,126 +1,175 @@
 <template>
-  <div>
-    <UPageHero title="Mindful Healing in the Heart of Miami"
-      description="Specialized psychiatric care and therapy tailored to your unique journey. At Solace, we combine clinical expertise with a compassionate, holistic approach to help you find your inner balance."
+  <div class="selection:bg-primary-200">
+    <!-- Hero Section -->
+    <UPageHero 
+      title="Nurturing Your Mind in the Heart of Miami"
+      description="Experience psychiatric care that feels human. At Solace, we combine clinical excellence with a warm, organic approach to help your mental garden flourish."
       :links="[{
-        label: 'Schedule a Consultation',
+        label: 'Begin Your Journey',
         to: '#contact',
         size: 'xl',
-        color: 'primary'
+        color: 'primary',
+        class: 'rounded-full px-8'
       }, {
-        label: 'Our Services',
-        to: '#services',
+        label: 'Explore Our Approach',
+        to: '#philosophy',
         size: 'xl',
         variant: 'link',
         color: 'neutral'
-      }]" align="left">
+      }]" 
+      align="left"
+      class="py-24 sm:py-32"
+    >
       <template #top>
-        <span class="text-primary font-medium tracking-wide uppercase text-sm mb-4 block">Welcome to Solace Mental
-          Health</span>
+        <span class="text-primary-600 font-serif italic text-lg mb-4 block">Welcome to Solace Mental Health</span>
       </template>
 
-      <div class="relative w-full aspect-square max-w-lg mx-auto lg:mr-0">
-        <div class="absolute inset-0 bg-primary-100/50 rounded-full blur-3xl -z-10 animate-pulse"></div>
-        <img src="/hero.png" alt="Meditation at Miami Beach"
-          class="w-full h-auto rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-500" />
+      <div class="relative group w-full max-w-xl">
+        <div class="absolute inset-0 bg-primary-200/30 rounded-full blur-3xl -z-10 group-hover:bg-primary-300/40 transition-colors duration-700"></div>
+        <div class="illustration-container card-organic shadow-2xl">
+          <img src="/wellness.png" alt="Mental Wellness Illustration"
+            class="w-full h-auto transform group-hover:scale-105 transition-transform duration-1000 p-8" />
+        </div>
       </div>
     </UPageHero>
 
-    <UPageSection class="bg-cream py-24">
-      <div class="max-w-3xl mx-auto text-center">
-        <blockquote class="text-3xl font-serif italic text-neutral-800 leading-relaxed">
-          "Your mind is like the ocean; sometimes turbulent, sometimes calm, but always deep and full of life. We help
-          you
-          navigate the waves."
-        </blockquote>
-        <p class="mt-8 text-lg text-soft">
-          Solace Mental Health provides a sanctuary for those seeking clarity and growth amidst the vibrant energy of
-          Miami.
-        </p>
-      </div>
-    </UPageSection>
-
-    <UPageSection id="services" title="Personalized Care for Your Mind"
-      description="We offer a range of services designed to support your mental well-being at every stage of life.">
-      <template #features>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <UPageCard title="Psychiatric Evaluation"
-            description="Comprehensive clinical assessments to understand your unique needs and develop a personalized treatment plan.">
-            <template #icon>
-              <div class="p-3 bg-secondary-100 rounded-xl mb-4">
-                <UIcon name="i-lucide-brain" class="w-8 h-8 text-secondary-600" />
-              </div>
-            </template>
-          </UPageCard>
-
-          <UPageCard title="Psychotherapy"
-            description="Engaging, evidence-based therapy sessions focused on cognitive behavioral techniques and mindfulness.">
-            <template #icon>
-              <div class="p-3 bg-primary-100 rounded-xl mb-4">
-                <UIcon name="i-lucide-messages-square" class="w-8 h-8 text-primary-600" />
-              </div>
-            </template>
-          </UPageCard>
-
-          <UPageCard title="Medication Management"
-            description="Expert guidance and ongoing monitoring of psychiatric medications to ensure safety and effectiveness.">
-            <template #icon>
-              <div class="p-3 bg-neutral-100 rounded-xl mb-4">
-                <UIcon name="i-lucide-pill" class="w-8 h-8 text-neutral-600" />
-              </div>
-            </template>
-          </UPageCard>
-
-          <UPageCard title="Holistic Wellness"
-            description="Integrating nutritional guidance, sleep hygiene, and stress management into your mental health journey.">
-            <template #icon>
-              <div class="p-3 bg-secondary-100 rounded-xl mb-4">
-                <UIcon name="i-lucide-sun" class="w-8 h-8 text-secondary-600" />
-              </div>
-            </template>
-          </UPageCard>
+    <!-- Philosophy Section -->
+    <UPageSection id="philosophy" class="bg-neutral-100 py-32 overflow-hidden relative" :ui="{ container: 'max-w-6xl' }">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100/50 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-100/50 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+      
+      <div class="relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-primary-600 font-serif italic text-2xl mb-6">Our Philosophy</h2>
+          <blockquote class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 leading-tight max-w-4xl mx-auto">
+            "Your mind is not a problem to be solved, but a garden to be nurtured."
+          </blockquote>
         </div>
-      </template>
-    </UPageSection>
-
-    <UPageSection id="about" class="bg-cream overflow-hidden">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
-          <h2 class="text-4xl font-serif font-bold text-neutral-900 mb-6">A Local Approach to Global Well-being</h2>
-          <p class="text-lg text-neutral-600 mb-6">
-            Located in the serene surroundings of Coral Gables, Solace Mental Health serves the greater Miami community
-            with
-            both in-person and tele-health visits.
-          </p>
-          <p class="text-lg text-neutral-600 mb-8">
-            We understand the unique stressors of Miami life—from the high-paced urban environment to the search for
-            balance. Our team is here to provide a grounded, professional, and warm space for your healing.
-          </p>
-          <UButton label="Learn More About Our Team" variant="outline" color="neutral" size="lg" />
-        </div>
-        <div class="relative">
-          <div class="absolute -top-12 -right-12 w-64 h-64 bg-secondary-200/40 rounded-full blur-3xl -z-10"></div>
-          <img src="/services.png" alt="Solace Mental Health Services Icons"
-            class="w-full h-auto rounded-3xl shadow-xl bg-white p-8" />
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 px-4">
+          <div class="space-y-6">
+            <p class="text-xl text-neutral-700 leading-relaxed font-light">
+              We believe that mental health is a natural process of growth and balance. Located in the heart of Miami, we bring a warm, professional, and deeply human perspective to psychiatric care.
+            </p>
+          </div>
+          <div class="space-y-6 border-l border-neutral-200 pl-8 hidden md:block">
+            <p class="text-xl text-neutral-700 leading-relaxed font-light">
+              Just as a garden needs the right environment to bloom, we provide the tools and support you need to find your inner calm amidst life's vibrant energy.
+            </p>
+          </div>
         </div>
       </div>
     </UPageSection>
 
-    <UPageSection id="contact">
-      <UPageCTA title="Start Your Journey Today"
-        description="Ready to take the first step towards a brighter, more balanced future? Book your initial consultation online or give us a call."
-        variant="solid" color="primary" :links="[{
+    <!-- Services Section -->
+    <UPageSection id="services" title="Cultivating Well-being"
+      description="Explore our range of personalized services designed to support your unique journey with compassion and expertise."
+      class="py-32"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 w-full">
+        <!-- Therapy Card -->
+        <div class="flex flex-col group w-full">
+          <div class="illustration-container card-organic mb-8 bg-primary-50 rounded-3xl aspect-square overflow-hidden">
+            <img src="/therapy.png" alt="Psychotherapy" class="w-full h-full object-cover p-6 group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-3">Individual Therapy</h3>
+          <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            Meaningful, evidence-based conversations focused on connection, understanding, and sustainable growth.
+          </p>
+          <UButton label="Learn More" variant="link" color="primary" class="p-0 text-lg w-fit" />
+        </div>
+
+        <!-- Evaluation Card -->
+        <div class="flex flex-col group w-full">
+          <div class="illustration-container card-organic mb-8 bg-secondary-50 rounded-3xl aspect-square overflow-hidden">
+            <img src="/evaluation.png" alt="Evaluation" class="w-full h-full object-cover p-6 group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-3">Psychiatric Evaluation</h3>
+          <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            Comprehensive assessments to understand your history and map out a personalized path to clarity.
+          </p>
+          <UButton label="Learn More" variant="link" color="primary" class="p-0 text-lg w-fit" />
+        </div>
+
+        <!-- Wellness Card -->
+        <div class="flex flex-col group w-full">
+          <div class="illustration-container card-organic mb-8 bg-neutral-100 rounded-3xl aspect-square overflow-hidden">
+            <img src="/wellness.png" alt="Holistic Wellness" class="w-full h-full object-cover p-6 group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="text-2xl font-serif font-bold text-neutral-900 mb-3">Holistic Wellness</h3>
+          <p class="text-neutral-600 text-lg leading-relaxed mb-6">
+            Integrating lifestyle, nutrition, and mindfulness to create a foundation for long-term mental resilience.
+          </p>
+          <UButton label="Learn More" variant="link" color="primary" class="p-0 text-lg w-fit" />
+        </div>
+      </div>
+    </UPageSection>
+
+    <!-- Miami Location Section -->
+    <UPageSection id="about" class="bg-primary-50 py-32 overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute inset-0 bg-white/40 backdrop-blur-sm rounded-[3rem] -z-10 transform -rotate-3 scale-105"></div>
+          <img src="/hero.png" alt="Miami Serenity"
+            class="w-full h-auto rounded-[3rem] shadow-2xl object-cover aspect-[4/5]" />
+        </div>
+        <div class="order-1 lg:order-2 px-4 lg:px-0">
+          <h2 class="text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-8 leading-tight line-clamp-3">Finding Your Calm in the Neon City</h2>
+          <p class="text-xl text-neutral-700 mb-8 leading-relaxed">
+            Based in the serene heart of Miami, FL, we provide a sanctuary from the urban rush. Whether in-person or via telehealth, our space is designed to be your grounding force.
+          </p>
+          <div class="space-y-6 mb-10">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
+                <UIcon name="i-lucide-map-pin" class="w-6 h-6" />
+              </div>
+              <div>
+                <p class="font-bold text-neutral-900">Miami, Florida</p>
+                <p class="text-neutral-600">Coral Gables & Virtual Visits</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
+                <UIcon name="i-lucide-clock" class="w-6 h-6" />
+              </div>
+              <div>
+                <p class="font-bold text-neutral-900">Flexible Scheduling</p>
+                <p class="text-neutral-600">Morning & Evening Appointments</p>
+              </div>
+            </div>
+          </div>
+          <UButton label="Get Directions" variant="solid" color="neutral" size="xl" class="rounded-full px-8" />
+        </div>
+      </div>
+    </UPageSection>
+
+    <!-- CTA Section -->
+    <UPageSection id="contact" class="py-32">
+      <UPageCTA 
+        title="Ready to Start Growing?"
+        description="Book your initial consultation today. We're here to listen, support, and help you find your way forward."
+        variant="solid" 
+        color="primary" 
+        class="rounded-[3rem] py-20 px-10 shadow-2xl"
+        :links="[{
           label: 'Book Online',
           to: '#',
           icon: 'i-lucide-calendar',
-          size: 'xl'
+          size: 'xl',
+          class: 'bg-neutral-950 text-white hover:bg-neutral-800'
         }, {
-          label: 'Call (305) 555-0123',
+          label: 'Call Us: (305) 555-0123',
           to: 'tel:3055550123',
           variant: 'link',
           color: 'neutral',
           size: 'xl'
-        }]" />
+        }]" 
+      />
     </UPageSection>
+    
+    <!-- Footer -->
+    <footer class="py-12 border-t border-neutral-200 text-center text-neutral-500 font-serif italic bg-neutral-50">
+      <p>© 2026 Solace Mental Health. Helping Miami Bloom.</p>
+    </footer>
   </div>
 </template>

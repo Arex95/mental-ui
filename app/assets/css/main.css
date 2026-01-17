@@ -4,41 +4,43 @@
 @theme static {
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Lora', serif;
-  --color-primary-50: #fff5f2;
-  --color-primary-100: #ffe8e1;
-  --color-primary-200: #ffd1c3;
-  --color-primary-300: #ffae96;
-  --color-primary-400: #ff7e5d;
-  --color-primary-500: #fe552b;
-  --color-primary-600: #ef3a11;
-  --color-primary-700: #c92c0a;
-  --color-primary-800: #a7270d;
-  --color-primary-900: #8a240f;
-  --color-primary-950: #4b0e04;
+  
+  /* Sunflower-inspired Palette */
+  --color-primary-50: #fffbeb;
+  --color-primary-100: #fef3c7;
+  --color-primary-200: #fde68a;
+  --color-primary-300: #fcd34d;
+  --color-primary-400: #fbbf24;
+  --color-primary-500: #f59e0b; /* Warmer yellow */
+  --color-primary-600: #d97706;
+  --color-primary-700: #b45309;
+  --color-primary-800: #92400e;
+  --color-primary-900: #78350f;
+  --color-primary-950: #451a03;
 
-  --color-secondary-50: #f2fbf9;
-  --color-secondary-100: #def6f0;
-  --color-secondary-200: #bdece2;
-  --color-secondary-300: #8fdcd0;
-  --color-secondary-400: #5bc5b8;
-  --color-secondary-500: #3fa89c;
-  --color-secondary-600: #2f877f;
-  --color-secondary-700: #296d68;
-  --color-secondary-800: #245855;
-  --color-secondary-900: #214a48;
-  --color-secondary-950: #0f2b2b;
+  --color-secondary-50: #f0fdf4;
+  --color-secondary-100: #dcfce7;
+  --color-secondary-200: #bbf7d0;
+  --color-secondary-300: #86efac;
+  --color-secondary-400: #4ade80;
+  --color-secondary-500: #22c55e;
+  --color-secondary-600: #16a34a;
+  --color-secondary-700: #15803d;
+  --color-secondary-800: #166534;
+  --color-secondary-900: #14532d;
+  --color-secondary-950: #052e16;
 
-  --color-neutral-50: #fcfcfb;
-  --color-neutral-100: #f7f7f5;
-  --color-neutral-200: #efeeea;
-  --color-neutral-300: #dedbd1;
-  --color-neutral-400: #b0aa93;
-  --color-neutral-500: #8e8568;
-  --color-neutral-600: #71684c;
-  --color-neutral-700: #58513d;
-  --color-neutral-800: #484234;
-  --color-neutral-900: #3f3a2f;
-  --color-neutral-950: #211e18;
+  --color-neutral-50: #fdfaf3; /* Cream background */
+  --color-neutral-100: #f9f1e1; /* Slightly darker cream */
+  --color-neutral-200: #f1e4cc;
+  --color-neutral-300: #e5d1ae;
+  --color-neutral-400: #c9a77c;
+  --color-neutral-500: #a17f5a;
+  --color-neutral-600: #846447;
+  --color-neutral-700: #6b503b;
+  --color-neutral-800: #574133;
+  --color-neutral-900: #48362d;
+  --color-neutral-950: #261b17;
 }
 
 :root {
@@ -58,4 +60,13 @@
 
 .text-soft {
   color: var(--color-neutral-600);
+}
+
+/* Custom styles for organic feel */
+.illustration-container {
+  @apply relative overflow-hidden rounded-3xl;
+}
+
+.card-organic {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
 }

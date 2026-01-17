@@ -14,27 +14,30 @@ useHead({
   }
 })
 
-const title = 'Solace Mental Health Miami | Psychiatric Care & Therapy'
-const description = 'Compassionate, evidence-based psychiatric care and therapy in Miami. Discover a holistic approach to mental well-being with our expert team.'
+const title = 'Solace - Mental Health & Wellness Miami'
+const description = 'Compassionate psychiatric care and therapy in Miami. Discover a holistic, garden-inspired approach to mental well-being.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: '/hero-bg.png',
-  twitterImage: '/hero-bg.png',
+  ogImage: '/wellness.png',
+  twitterImage: '/wellness.png',
   twitterCard: 'summary_large_image'
 })
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader class="border-b-0 bg-neutral-50/80 backdrop-blur-md sticky top-0 z-50">
       <template #left>
-        <NuxtLink to="/" class="flex items-center gap-2">
-          <span class="text-xl font-serif font-bold text-primary">Solace</span>
-          <span class="text-sm font-light tracking-widest uppercase hidden sm:inline">Mental Health</span>
+        <NuxtLink to="/" class="flex items-center gap-2 group">
+          <div class="w-8 h-8 bg-primary-400 rounded-full flex items-center justify-center transition-transform group-hover:rotate-12">
+            <UIcon name="i-lucide-sun" class="w-5 h-5 text-white" />
+          </div>
+          <span class="text-2xl font-serif font-bold text-neutral-900">Solace</span>
+          <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-primary-600 hidden sm:inline ml-1">Mental Health</span>
         </NuxtLink>
       </template>
 
@@ -43,21 +46,19 @@ useSeoMeta({
           label: 'Services',
           to: '#services'
         }, {
-          label: 'About',
-          to: '#about'
+          label: 'Approach',
+          to: '#philosophy'
         }, {
-          label: 'FAQ',
-          to: '#faq'
+          label: 'Miami Oasis',
+          to: '#about'
         }, {
           label: 'Contact',
           to: '#contact'
-        }]" />
+        }]" class="font-medium" />
       </template>
 
       <template #right>
-        <UColorModeButton />
-
-        <UButton label="Book Now" color="primary" variant="solid" class="hidden sm:flex" />
+        <UButton label="Book Visit" color="primary" variant="solid" class="rounded-full px-6 font-bold" />
       </template>
     </UHeader>
 
@@ -65,16 +66,28 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <UFooter>
+    <UFooter class="border-t-0 bg-neutral-100 py-16">
       <template #left>
-        <p class="text-sm text-muted">
-          Solace Mental Health Miami • © {{ new Date().getFullYear() }}
-        </p>
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 bg-primary-400 rounded-full flex items-center justify-center">
+              <UIcon name="i-lucide-sun" class="w-4 h-4 text-white" />
+            </div>
+            <span class="text-xl font-serif font-bold text-neutral-900">Solace</span>
+          </div>
+          <p class="text-sm text-neutral-500 max-w-xs leading-relaxed">
+            Cultivating mental well-being through compassionate, evidence-based care in the heart of Florida.
+          </p>
+        </div>
       </template>
 
       <template #right>
-        <UButton to="https://instagram.com" target="_blank" icon="i-simple-icons-instagram" aria-label="Instagram"
-          color="neutral" variant="ghost" />
+        <div class="flex gap-4">
+          <UButton to="https://instagram.com" target="_blank" icon="i-simple-icons-instagram" aria-label="Instagram"
+            color="neutral" variant="ghost" class="hover:text-primary-600" />
+          <UButton to="#" icon="i-simple-icons-linkedin" aria-label="LinkedIn"
+            color="neutral" variant="ghost" class="hover:text-primary-600" />
+        </div>
       </template>
     </UFooter>
   </UApp>
